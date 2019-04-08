@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-require_once('connect.php');
+include('connect.php');
 ?>
 <html>
 
@@ -60,6 +60,7 @@ $job = $bigQuery->startQuery($queryJobConfig);
 $queryResults = $job->$queryResults();
 if ($queryResults->isComplete()){
   foreach ($queryResults as $row){
+    var_dump($row);
     ?>
 
   
