@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/theme.css" type="text/css">
 </head>
 
 <body class="">
@@ -49,7 +49,7 @@
         <div class="mx-auto col-md-12 col-10 bg-white p-1">
           <h1 class="lead">Log In</h1>
           <br>
-          <form action="checklogin.php" method="POST">
+          <form action="homepage.php" method="POST">
             <div class="form-group">
               <label>Email address</label>
               <input type="email" name="email" class="form-control" placeholder="Enter email">
