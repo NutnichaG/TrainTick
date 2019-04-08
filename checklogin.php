@@ -6,9 +6,13 @@ session_start();
 	$q ="SELECT * from `studied-bounty-235113.traintick.users`"." WHERE Email='".$email."' and Password='".$pass."' ";
 
 	require_once('connect.php');
-	if ($res = $mysqli->query($q))
+
+	$queryJobConfig = $bigQuery->query($q);
+	$job = $bigQuery->startQuery($queryJobConfig);
+	$queryResults = $job->queryResults();
+	if ($squeryResults -> isComplete()){
 	{
-		$row = $res->fetch_array();
+		foreach ($queryResults as $row){
 		if (
 				isset($row['User_ID']) &&
 				isset($row['Title']) &&
@@ -23,6 +27,8 @@ session_start();
 				isset($row['Role']) &&
 				$row['DISABLE'] == 0
 			)
+	
+	
 			{
 				$_SESSION['User_ID'] = $row['User_ID'];
 				$_SESSION['Title'] = $row['Title'];
@@ -44,6 +50,8 @@ session_start();
 			{
 				header("Location: login.php");
 			}
+		}
+		}
 	}
 	else
 	{
