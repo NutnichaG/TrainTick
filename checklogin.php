@@ -3,8 +3,8 @@ session_start();
 	$email = $_POST['email'];
 	$pass = $_POST['pass'];
 	
-	$q = "SELECT * FROM users ".
-	" WHERE Email='".$email."' AND Password='".$pass."' ";
+	$q ="SELECT * from `studied-bounty-235113.traintick.users`"." WHERE Email='".$email."' and Password='".$pass."' ";
+
 	require_once('connect.php');
 	if ($res = $mysqli->query($q))
 	{
