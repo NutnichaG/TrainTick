@@ -1,12 +1,7 @@
 <?php
-  require __DIR__ ."/vendor/autoload.php";
-
-  use Google\Cloud\BigQuery\BigQueryClient;
-
-  $projectId = "studied-bounty-235113";
-
-  $bigQuery = new BigQueryClient([
-    "projectId" => $projectId,
-  ]);
+$mysqli = new mysqli('localhost','root','','traintick');
+if($mysqli->connect_errno){
+  echo $mysqli->connect_errno.": ".$mysqli->connect_error;
+}
    
 ?>

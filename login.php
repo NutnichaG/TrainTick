@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<?php
-include('connect.php');
-?>
+
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="/stylesheets/theme.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
 </head>
 
 <body class="">
@@ -51,32 +49,7 @@ include('connect.php');
         <div class="mx-auto col-md-12 col-10 bg-white p-1">
           <h1 class="lead">Log In</h1>
           <br>
-          <h1><?php echo "5555555555555555555555555"?></h1>
-
-<?php
-require 'vendor/autoload.php';
-
-use Google\Cloud\BigQuery\BigQueryClient;
-
-$bigQuery = new BigQueryClient();
-
-// Get an instance of a previously created table.
-$dataset = $bigQuery->dataset('traintick');
-$table = $dataset->table('users');
-
-
-
-// Run a query and inspect the results.
-$queryJobConfig = $bigQuery->query(
-    'SELECT * FROM `studied-bounty-235113.traintick.users`'
-);
-$queryResults = $bigQuery->runQuery($queryJobConfig);
-
-foreach ($queryResults as $row) {
-    print_r($row);
-}
-?>
-          <form action="homepage.php" method="POST">
+          <form action="checklogin.php" method="POST">
             <div class="form-group">
               <label>Email address</label>
               <input type="email" name="email" class="form-control" placeholder="Enter email">
